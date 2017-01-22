@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sync xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" rows="4610">
   <TimeFormat>{row}</TimeFormat>
-  <AudioFile>C:\dev\of\ofxFX(Seb)\ShadertoyMultipass\bin\data\music.mp3</AudioFile>
+  <AudioFile>C:\Users\turbohitler420\Downloads\quadtrip_syncpack\data\music.mp3</AudioFile>
   <AudioOffset>0</AudioOffset>
   <BPM>133</BPM>
   <RowsPerBeat>8</RowsPerBeat>
@@ -17,8 +17,11 @@
       <key interpolation="0" row="336" value="0" />
       <key interpolation="0" row="508" value="0.5" />
       <key interpolation="0" row="511" value="1" />
-      <key interpolation="1" row="512" value="1" />
-      <key interpolation="1" row="986" value="0" />
+      <key interpolation="0" row="512" value="1" />
+      <key interpolation="0" row="634" value="0.5" />
+      <key interpolation="0" row="636" value="1" />
+      <key interpolation="0" row="986" value="0" />
+      <key interpolation="0" row="1016" value="0" />
       <key interpolation="0" row="1590" value="1" />
       <key interpolation="0" row="1654" value="0" />
       <key interpolation="0" row="1717" value="1" />
@@ -27,11 +30,11 @@
       <key interpolation="0" row="1909" value="0" />
       <key interpolation="0" row="1972" value="0.5" />
       <key interpolation="0" row="2028" value="0" />
-      <key interpolation="0" row="2035" value="1" />
-      <key interpolation="0" row="2290" value="0" />
-      <key interpolation="0" row="2298" value="1" />
+      <key interpolation="0" row="2035" value="0" />
       <key interpolation="0" row="2542" value="0" />
       <key interpolation="0" row="2549" value="0" />
+      <key interpolation="0" row="2796" value="1" />
+      <key interpolation="0" row="2804" value="0" />
       <key interpolation="0" row="2821" value="0.5" />
       <key interpolation="0" row="2853" value="1" />
       <key interpolation="1" row="2854" value="1" />
@@ -53,16 +56,17 @@
       <key interpolation="0" row="3068" value="1" />
       <key interpolation="0" row="3076" value="1" />
       <key interpolation="0" row="3084" value="0" />
+      <key interpolation="0" row="3099" value="1" />
+      <key interpolation="0" row="3107" value="0" />
       <key interpolation="0" row="3148" value="1" />
       <key interpolation="0" row="3177" value="1" />
       <key interpolation="0" row="3185" value="0" />
       <key interpolation="0" row="3193" value="1" />
       <key interpolation="0" row="3201" value="0" />
-      <key interpolation="0" row="3208" value="1" />
       <key interpolation="0" row="3216" value="0" />
       <key interpolation="0" row="3224" value="1" />
       <key interpolation="0" row="3232" value="0" />
-      <key interpolation="0" row="3275" value="1" />
+      <key interpolation="0" row="3275" value="0.7" />
       <key interpolation="3" row="3551" value="1" />
       <key interpolation="3" row="3558" value="0.07" />
       <key interpolation="0" row="3565" value="1" />
@@ -70,11 +74,21 @@
       <key interpolation="0" row="3590" value="1" />
       <key interpolation="0" row="3598" value="1" />
       <key interpolation="0" row="3622" value="0" />
+      <key interpolation="0" row="3907" value="1" />
       <key interpolation="0" row="3934" value="0.3" />
-      <key interpolation="1" row="4047" value="0.3" />
-      <key interpolation="0" row="4075" value="0" />
+      <key interpolation="0" row="3972" value="1" />
+      <key interpolation="0" row="4011" value="1" />
+      <key interpolation="0" row="4015" value="0" />
+      <key interpolation="0" row="4024" value="1" />
+      <key interpolation="0" row="4028" value="0" />
+      <key interpolation="0" row="4032" value="0.1" />
+      <key interpolation="0" row="4069" value="0" />
+      <key interpolation="3" row="4098" value="0.01" />
+      <key interpolation="0" row="4543" value="1" />
+      <key interpolation="0" row="4544" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
-    <track name="blend_vidfbo" visible="true">
+    <track name="blend_vidfbo" visible="false">
       <key interpolation="0" row="0" value="0" />
       <key interpolation="1" row="497" value="0" />
       <key interpolation="0" row="508" value="0.5" />
@@ -99,7 +113,7 @@
       <key interpolation="0" row="509" value="0" />
       <key interpolation="0" row="649" value="0" />
       <key interpolation="2" row="1016" value="0.25" />
-      <key interpolation="1" row="1272" value="0.75" />
+      <key interpolation="0" row="1272" value="0.75" />
       <key interpolation="0" row="1523" value="0" />
       <key interpolation="0" row="1528" value="0" />
       <key interpolation="0" row="1536" value="1" />
@@ -154,8 +168,17 @@
       <key interpolation="0" row="3359" value="1" />
       <key interpolation="0" row="3367" value="0" />
       <key interpolation="0" row="3431" value="0" />
-      <key interpolation="1" row="3689" value="0" />
-      <key interpolation="0" row="4343" value="0.2" />
+      <key interpolation="0" row="3781" value="1" />
+      <key interpolation="0" row="3806" value="0" />
+      <key interpolation="0" row="3820" value="1" />
+      <key interpolation="0" row="3828" value="0" />
+      <key interpolation="0" row="3876" value="1" />
+      <key interpolation="0" row="3940" value="0" />
+      <key interpolation="0" row="4007" value="1" />
+      <key interpolation="0" row="4011" value="0" />
+      <key interpolation="0" row="4098" value="0.3" />
+      <key interpolation="0" row="4544" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="blend_plasma" visible="true">
       <key interpolation="0" row="0" value="0" />
@@ -170,7 +193,6 @@
       <key interpolation="0" row="792" value="0" />
       <key interpolation="1" row="1016" value="1" />
       <key interpolation="0" row="1272" value="0.35" />
-      <key interpolation="0" row="1512" value="0" />
       <key interpolation="0" row="1523" value="0" />
       <key interpolation="0" row="1528" value="0.5" />
       <key interpolation="0" row="1536" value="0" />
@@ -179,7 +201,8 @@
       <key interpolation="0" row="2035" value="0" />
       <key interpolation="0" row="2542" value="0" />
       <key interpolation="0" row="2549" value="0" />
-      <key interpolation="0" row="2821" value="0" />
+      <key interpolation="0" row="2821" value="1" />
+      <key interpolation="0" row="2826" value="0" />
       <key interpolation="0" row="2986" value="0" />
       <key interpolation="0" row="2989" value="1" />
       <key interpolation="0" row="2992" value="0" />
@@ -189,11 +212,28 @@
       <key interpolation="0" row="3004" value="0" />
       <key interpolation="0" row="3007" value="1" />
       <key interpolation="0" row="3010" value="0" />
+      <key interpolation="0" row="3084" value="0.7" />
+      <key interpolation="0" row="3091" value="0" />
       <key interpolation="0" row="3598" value="1" />
       <key interpolation="0" row="3622" value="0" />
       <key interpolation="1" row="3657" value="0.01" />
-      <key interpolation="2" row="3706" value="0.1" />
+      <key interpolation="0" row="3706" value="0.1" />
+      <key interpolation="0" row="3751" value="1" />
+      <key interpolation="0" row="3781" value="0.5" />
+      <key interpolation="0" row="3805" value="0" />
+      <key interpolation="0" row="3813" value="1" />
+      <key interpolation="0" row="3820" value="0" />
+      <key interpolation="0" row="3828" value="1" />
+      <key interpolation="0" row="3836" value="0" />
+      <key interpolation="0" row="3844" value="1" />
+      <key interpolation="0" row="3876" value="0" />
       <key interpolation="0" row="3886" value="0.3" />
+      <key interpolation="0" row="3908" value="0" />
+      <key interpolation="0" row="4015" value="1" />
+      <key interpolation="0" row="4019" value="0" />
+      <key interpolation="0" row="4028" value="1" />
+      <key interpolation="0" row="4032" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="blend_model" visible="true">
       <key interpolation="0" row="0" value="0" />
@@ -210,6 +250,7 @@
       <key interpolation="0" row="2549" value="0" />
       <key interpolation="0" row="2550" value="0" />
       <key interpolation="0" row="2821" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="blend_text" visible="true">
       <key interpolation="0" row="0" value="0" />
@@ -236,6 +277,15 @@
       <key interpolation="0" row="2549" value="0" />
       <key interpolation="0" row="2550" value="0" />
       <key interpolation="0" row="2821" value="0" />
+      <key interpolation="0" row="3805" value="1" />
+      <key interpolation="0" row="3812" value="0" />
+      <key interpolation="0" row="4069" value="1" />
+      <key interpolation="0" row="4098" value="0" />
+      <key interpolation="0" row="4310" value="1" />
+      <key interpolation="0" row="4320" value="0" />
+      <key interpolation="0" row="4544" value="1" />
+      <key interpolation="0" row="4574" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="blend_teho" visible="true">
       <key interpolation="0" row="64" value="0" />
@@ -255,14 +305,20 @@
       <key interpolation="0" row="505" value="0" />
       <key interpolation="0" row="506" value="1" />
       <key interpolation="0" row="507" value="0" />
+      <key interpolation="0" row="634" value="1" />
+      <key interpolation="0" row="635" value="1" />
+      <key interpolation="0" row="636" value="0" />
       <key interpolation="0" row="689" value="0" />
       <key interpolation="0" row="694" value="1" />
       <key interpolation="0" row="699" value="0" />
       <key interpolation="0" row="986" value="1" />
       <key interpolation="0" row="1016" value="0" />
+      <key interpolation="0" row="1270" value="1" />
+      <key interpolation="0" row="1272" value="0" />
       <key interpolation="0" row="1523" value="1" />
-      <key interpolation="0" row="1525" value="0" />
       <key interpolation="0" row="1528" value="0" />
+      <key interpolation="0" row="1537" value="1" />
+      <key interpolation="0" row="1539" value="0" />
       <key interpolation="0" row="1589" value="0.7" />
       <key interpolation="0" row="1590" value="0" />
       <key interpolation="3" row="1648" value="0.12" />
@@ -276,15 +332,18 @@
       <key interpolation="3" row="1843" value="0.5" />
       <key interpolation="0" row="1844" value="0" />
       <key interpolation="0" row="1972" value="0.15" />
+      <key interpolation="0" row="2026" value="1" />
       <key interpolation="0" row="2028" value="0" />
       <key interpolation="0" row="2034" value="1" />
       <key interpolation="0" row="2035" value="0" />
       <key interpolation="0" row="2157" value="0.3" />
       <key interpolation="0" row="2160" value="0" />
-      <key interpolation="0" row="2290" value="0.17" />
+      <key interpolation="0" row="2290" value="1" />
       <key interpolation="0" row="2292" value="0" />
       <key interpolation="0" row="2542" value="0" />
       <key interpolation="0" row="2549" value="0" />
+      <key interpolation="0" row="2821" value="1" />
+      <key interpolation="0" row="2823" value="0" />
       <key interpolation="3" row="2986" value="0" />
       <key interpolation="0" row="3021" value="1" />
       <key interpolation="0" row="3022" value="0" />
@@ -302,6 +361,14 @@
       <key interpolation="0" row="3551" value="0" />
       <key interpolation="0" row="3597" value="1" />
       <key interpolation="0" row="3598" value="0" />
+      <key interpolation="0" row="3809" value="1" />
+      <key interpolation="0" row="3814" value="0" />
+      <key interpolation="0" row="3836" value="1" />
+      <key interpolation="0" row="3838" value="0" />
+      <key interpolation="0" row="4067" value="1" />
+      <key interpolation="0" row="4071" value="0" />
+      <key interpolation="0" row="4572" value="1" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="blend_logo" visible="true">
       <key interpolation="0" row="64" value="0" />
@@ -344,6 +411,7 @@
       <key interpolation="0" row="3542" value="1" />
       <key interpolation="0" row="3543" value="0" />
       <key interpolation="0" row="3551" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="post_bloom" visible="true">
       <key interpolation="0" row="64" value="1" />
@@ -353,11 +421,16 @@
       <key interpolation="0" row="508" value="1" />
       <key interpolation="0" row="1016" value="0" />
       <key interpolation="0" row="1056" value="1" />
+      <key interpolation="0" row="1654" value="0" />
+      <key interpolation="0" row="1717" value="1" />
+      <key interpolation="0" row="1909" value="0" />
+      <key interpolation="0" row="1972" value="1" />
       <key interpolation="0" row="2035" value="1" />
       <key interpolation="0" row="2543" value="1" />
       <key interpolation="0" row="2550" value="1" />
       <key interpolation="0" row="2821" value="1" />
       <key interpolation="0" row="3275" value="1" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="post_godrays" visible="true">
       <key interpolation="0" row="64" value="1" />
@@ -367,25 +440,50 @@
       <key interpolation="0" row="508" value="1" />
       <key interpolation="0" row="1016" value="0" />
       <key interpolation="0" row="1056" value="1" />
-      <key interpolation="0" row="2035" value="1" />
+      <key interpolation="0" row="2035" value="0" />
+      <key interpolation="0" row="2037" value="0" />
       <key interpolation="0" row="2543" value="1" />
       <key interpolation="0" row="2550" value="1" />
       <key interpolation="0" row="2821" value="1" />
       <key interpolation="0" row="3275" value="1" />
       <key interpolation="0" row="3498" value="2" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="post_hortilt" visible="true">
       <key interpolation="0" row="64" value="0" />
       <key interpolation="0" row="72" value="0" />
+      <key interpolation="0" row="182" value="1" />
+      <key interpolation="0" row="183" value="0" />
+      <key interpolation="0" row="246" value="1" />
+      <key interpolation="0" row="248" value="0" />
       <key interpolation="0" row="493" value="1" />
       <key interpolation="0" row="506" value="0" />
+      <key interpolation="0" row="782" value="1" />
+      <key interpolation="0" row="784" value="0" />
+      <key interpolation="0" row="1013" value="1" />
       <key interpolation="0" row="1016" value="0" />
       <key interpolation="0" row="1017" value="0" />
       <key interpolation="0" row="1056" value="0" />
+      <key interpolation="0" row="1494" value="1" />
       <key interpolation="0" row="1534" value="0" />
+      <key interpolation="0" row="2035" value="1" />
+      <key interpolation="0" row="2036" value="0" />
+      <key interpolation="0" row="2160" value="1" />
+      <key interpolation="0" row="2161" value="0" />
+      <key interpolation="0" row="2286" value="1" />
+      <key interpolation="0" row="2288" value="0" />
+      <key interpolation="0" row="2533" value="1" />
+      <key interpolation="0" row="2535" value="0" />
       <key interpolation="0" row="2543" value="0" />
       <key interpolation="0" row="2550" value="0" />
+      <key interpolation="0" row="2990" value="1" />
+      <key interpolation="0" row="2992" value="0" />
+      <key interpolation="0" row="3010" value="1" />
+      <key interpolation="0" row="3013" value="0" />
       <key interpolation="0" row="3418" value="0" />
+      <key interpolation="0" row="3820" value="1" />
+      <key interpolation="0" row="3828" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="post_lut" visible="true">
       <key interpolation="0" row="64" value="0" />
@@ -406,6 +504,7 @@
       <key interpolation="0" row="3535" value="1" />
       <key interpolation="0" row="3542" value="0" />
       <key interpolation="0" row="3543" value="1" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="text_index" visible="true">
       <key interpolation="0" row="0" value="0" />
@@ -414,26 +513,50 @@
       <key interpolation="0" row="248" value="1" />
       <key interpolation="0" row="760" value="2" />
       <key interpolation="0" row="790" value="3" />
-      <key interpolation="0" row="1528" value="3" />
+      <key interpolation="0" row="1528" value="4" />
+      <key interpolation="0" row="2028" value="5" />
+      <key interpolation="0" row="2543" value="6" />
+      <key interpolation="0" row="3805" value="7" />
+      <key interpolation="0" row="4067" value="8" />
+      <key interpolation="0" row="4309" value="10" />
+      <key interpolation="0" row="4313" value="11" />
+      <key interpolation="0" row="4317" value="12" />
+      <key interpolation="0" row="4544" value="9" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="offset_plasma" visible="true">
       <key interpolation="0" row="64" value="-9999940" />
       <key interpolation="0" row="205" value="-9000017" />
       <key interpolation="0" row="420" value="-9999924" />
       <key interpolation="0" row="1018" value="-9999733" />
+      <key interpolation="0" row="3599" value="33" />
+      <key interpolation="0" row="3751" value="21" />
+      <key interpolation="0" row="3781" value="31.5" />
+      <key interpolation="0" row="3813" value="288" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="speed_plasma" visible="true">
       <key interpolation="0" row="64" value="1" />
-      <key interpolation="2" row="1513" value="1" />
+      <key interpolation="0" row="1513" value="1" />
       <key interpolation="0" row="1528" value="-0.8000001" />
+      <key interpolation="0" row="3813" value="0.1" />
+      <key interpolation="0" row="3828" value="0.3" />
+      <key interpolation="1" row="3844" value="-0.4" />
+      <key interpolation="0" row="3875" value="-1" />
+      <key interpolation="1" row="3886" value="-0.1" />
+      <key interpolation="1" row="4032" value="0.5" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="blend_snow" visible="true">
       <key interpolation="0" row="0" value="0" />
       <key interpolation="0" row="986" value="1" />
       <key interpolation="0" row="1017" value="0" />
       <key interpolation="0" row="2480" value="1" />
+      <key interpolation="0" row="2539" value="1" />
       <key interpolation="0" row="2543" value="0" />
       <key interpolation="3" row="2550" value="0.05" />
+      <key interpolation="0" row="2669" value="1" />
+      <key interpolation="3" row="2680" value="0" />
       <key interpolation="0" row="2923" value="1" />
       <key interpolation="0" row="2940" value="0" />
       <key interpolation="0" row="2986" value="1" />
@@ -455,6 +578,14 @@
       <key interpolation="0" row="3590" value="0" />
       <key interpolation="0" row="3598" value="0" />
       <key interpolation="0" row="3622" value="1" />
+      <key interpolation="0" row="3751" value="0" />
+      <key interpolation="0" row="3828" value="1" />
+      <key interpolation="0" row="3836" value="0" />
+      <key interpolation="0" row="3940" value="1" />
+      <key interpolation="0" row="3972" value="0" />
+      <key interpolation="0" row="4024" value="1" />
+      <key interpolation="0" row="4028" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="speed_snow" visible="true">
       <key interpolation="0" row="0" value="0" />
@@ -466,35 +597,97 @@
       <key interpolation="0" row="2858" value="0.5" />
       <key interpolation="2" row="2986" value="0.1" />
       <key interpolation="0" row="3040" value="0.6" />
+      <key interpolation="0" row="3622" value="0.3" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="peilaus_plasma" visible="true">
       <key interpolation="0" row="372" value="1" />
+      <key interpolation="0" row="513" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="blend_peura" visible="true">
       <key interpolation="1" row="0" value="0" />
       <key interpolation="1" row="17" value="0.3" />
       <key interpolation="0" row="98" value="0" />
-      <key interpolation="2" row="2404" value="0" />
-      <key interpolation="0" row="2452" value="0.5" />
+      <key interpolation="0" row="2035" value="1" />
+      <key interpolation="0" row="2539" value="0" />
+      <key interpolation="0" row="2543" value="0" />
+      <key interpolation="0" row="2549" value="1" />
       <key interpolation="0" row="2633" value="0.200000018" />
       <key interpolation="0" row="2634" value="1" />
-      <key interpolation="2" row="3041" value="1" />
+      <key interpolation="0" row="2669" value="0" />
+      <key interpolation="0" row="2680" value="1" />
+      <key interpolation="0" row="2796" value="0" />
+      <key interpolation="0" row="2804" value="1" />
+      <key interpolation="0" row="2821" value="0" />
+      <key interpolation="0" row="2826" value="1" />
+      <key interpolation="0" row="2986" value="0" />
       <key interpolation="0" row="3060" value="0" />
+      <key interpolation="0" row="3084" value="0.5" />
+      <key interpolation="0" row="3091" value="0" />
+      <key interpolation="0" row="3208" value="1" />
+      <key interpolation="0" row="3216" value="0" />
+      <key interpolation="0" row="3574" value="1" />
+      <key interpolation="0" row="3582" value="0" />
+      <key interpolation="0" row="3685" value="1" />
+      <key interpolation="0" row="3693" value="0" />
+      <key interpolation="0" row="3701" value="1" />
+      <key interpolation="0" row="3709" value="0" />
+      <key interpolation="0" row="3717" value="1" />
+      <key interpolation="0" row="3725" value="0" />
+      <key interpolation="0" row="3836" value="1" />
+      <key interpolation="0" row="3844" value="0" />
+      <key interpolation="0" row="4003" value="1" />
+      <key interpolation="0" row="4007" value="0" />
+      <key interpolation="1" row="4032" value="0.1" />
+      <key interpolation="0" row="4067" value="1" />
+      <key interpolation="0" row="4069" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="offset_snow" visible="true">
       <key interpolation="0" row="0" value="0" />
+      <key interpolation="0" row="3276" value="322" />
+      <key interpolation="0" row="3328" value="-500" />
+      <key interpolation="0" row="3420" value="1" />
+      <key interpolation="0" row="3566" value="999" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="offset_circlehex" visible="true">
       <key interpolation="0" row="0" value="0" />
+      <key interpolation="0" row="512" value="100" />
+      <key interpolation="0" row="636" value="555" />
+      <key interpolation="0" row="700" value="100" />
+      <key interpolation="0" row="891" value="999" />
+      <key interpolation="0" row="954" value="600" />
+      <key interpolation="0" row="1717" value="5000" />
+      <key interpolation="0" row="1844" value="0" />
+      <key interpolation="0" row="1972" value="1500" />
+      <key interpolation="0" row="3099" value="99999" />
+      <key interpolation="0" row="3368" value="321" />
+      <key interpolation="0" row="4098" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="speed_circlehex" visible="true">
       <key interpolation="0" row="0" value="1" />
+      <key interpolation="0" row="3099" value="8" />
+      <key interpolation="0" row="3368" value="2" />
+      <key interpolation="0" row="4098" value="0.2" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="offset_p2" visible="true">
       <key interpolation="0" row="0" value="0" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="speed_p2" visible="true">
       <key interpolation="0" row="0" value="1" />
+      <key interpolation="0" row="2034" value="0.6" />
+      <key interpolation="3" row="2288" value="0.6" />
+      <key interpolation="0" row="2292" value="1" />
+      <key interpolation="3" row="2535" value="1" />
+      <key interpolation="0" row="2539" value="2" />
+      <key interpolation="0" row="3084" value="12" />
+      <key interpolation="0" row="3208" value="4" />
+      <key interpolation="0" row="4609" value="0" />
     </track>
   </tracks>
   <bookmarks>
