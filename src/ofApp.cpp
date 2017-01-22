@@ -485,36 +485,12 @@ void ofApp::draw() {
 
 void ofApp::TuringPatternInitordie() {
     TuringPattern.allocate(512, 512);
-    TuringPattern_A.allocate(512, 512);
 
+    TuringPattern_A.allocate(512, 512);
 	TuringPattern_B.allocate(512, 512);
-    TuringPattern_C.allocate(512, 512);
-    TuringPattern_D.allocate(512, 512);
 
 	CircleHex.allocate(1024, 1024);
 	CircleHex.allocate(512, 512);
-
-	ofImage img1, img2, img3, img4, img5, img6;
-	img1.setUseTexture(false);
-	img2.setUseTexture(false);
-	img3.setUseTexture(false);
-	img4.setUseTexture(false);
-	img5.setUseTexture(false);
-	img6.setUseTexture(false);
-
-	img1.load("sky01/right.png");
-	img2.load("sky01/left.png");
-	img3.load("sky01/top.png");
-	img4.load("sky01/down.png");
-	img5.load("sky01/front.png");
-	img6.load("sky01/back.png");
-
-	img1.allocate(512, 512, OF_IMAGE_COLOR);
-	img2.allocate(512, 512, OF_IMAGE_COLOR);
-	img3.allocate(512, 512, OF_IMAGE_COLOR);
-	img4.allocate(512, 512, OF_IMAGE_COLOR);
-	img5.allocate(512, 512, OF_IMAGE_COLOR);
-	img6.allocate(512, 512, OF_IMAGE_COLOR);
 
 	Plasma.allocate(512, 512);
 
