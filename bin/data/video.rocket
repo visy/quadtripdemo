@@ -218,6 +218,8 @@
       <key interpolation="2" row="132" value="1" />
       <key interpolation="0" row="140" value="0" />
       <key interpolation="0" row="199" value="0" />
+      <key interpolation="0" row="248" value="1" />
+      <key interpolation="0" row="272" value="0" />
       <key interpolation="0" row="508" value="0" />
       <key interpolation="0" row="509" value="0" />
       <key interpolation="0" row="763" value="1" />
@@ -406,8 +408,10 @@
       <key interpolation="0" row="3543" value="1" />
     </track>
     <track name="text_index" visible="true">
+      <key interpolation="0" row="0" value="0" />
       <key interpolation="0" row="64" value="0" />
       <key interpolation="0" row="72" value="0" />
+      <key interpolation="0" row="248" value="1" />
       <key interpolation="0" row="760" value="2" />
       <key interpolation="0" row="790" value="3" />
       <key interpolation="0" row="1528" value="3" />
@@ -476,6 +480,21 @@
       <key interpolation="0" row="2634" value="1" />
       <key interpolation="2" row="3041" value="1" />
       <key interpolation="0" row="3060" value="0" />
+    </track>
+    <track name="offset_snow" visible="true">
+      <key interpolation="0" row="0" value="0" />
+    </track>
+    <track name="offset_circlehex" visible="true">
+      <key interpolation="0" row="0" value="0" />
+    </track>
+    <track name="speed_circlehex" visible="true">
+      <key interpolation="0" row="0" value="1" />
+    </track>
+    <track name="offset_p2" visible="true">
+      <key interpolation="0" row="0" value="0" />
+    </track>
+    <track name="speed_p2" visible="true">
+      <key interpolation="0" row="0" value="1" />
     </track>
   </tracks>
   <bookmarks>

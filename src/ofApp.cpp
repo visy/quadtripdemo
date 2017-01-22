@@ -30,7 +30,14 @@ const struct sync_track *text_index;
 const struct sync_track *offset_plasma;
 const struct sync_track *speed_plasma;
 
+const struct sync_track *offset_snow;
 const struct sync_track *speed_snow;
+
+const struct sync_track *offset_circlehex;
+const struct sync_track *speed_circlehex;
+
+const struct sync_track *offset_p2;
+const struct sync_track *speed_p2;
 
 const struct sync_track *peilaus_plasma;
 
@@ -55,6 +62,13 @@ float _text_index;
 float _offset_plasma;
 float _speed_plasma;
 
+float _offset_circlehex;
+float _speed_circlehex;
+
+float _offset_p2;
+float _speed_p2;
+
+float _offset_snow;
 float _speed_snow;
 
 float _peilaus_plasma;
@@ -63,6 +77,8 @@ float eflip = 0.0;
 
 int videoWidth;
 int videoHeight;
+
+vector <string> texts;
 
 #ifndef SYNC_PLAYER
 
@@ -110,6 +126,12 @@ void ofApp::setup(){
 	videoWidth = width;
 	videoHeight = height;
     
+	ofBuffer buffer = ofBufferFromFile("text.dat");
+
+	for (auto line : buffer.getLines()) {
+		texts.push_back(line);
+	}
+
 	ofSetVerticalSync(true);
 	ofSetFrameRate(60);
     ofBackground(0);
@@ -167,7 +189,14 @@ void ofApp::setup(){
 	offset_plasma = sync_get_track(rocket, "offset_plasma");
 	speed_plasma = sync_get_track(rocket, "speed_plasma");
 
+	offset_snow = sync_get_track(rocket, "offset_snow");
 	speed_snow = sync_get_track(rocket, "speed_snow");
+
+	offset_circlehex = sync_get_track(rocket, "offset_circlehex");
+	speed_circlehex = sync_get_track(rocket, "speed_circlehex");
+
+	offset_p2 = sync_get_track(rocket, "offset_p2");
+	speed_p2 = sync_get_track(rocket, "speed_p2");
 
 	peilaus_plasma = sync_get_track(rocket, "peilaus_plasma");
 
@@ -219,7 +248,14 @@ void ofApp::update() {
 	_offset_plasma = float(sync_get_val(offset_plasma, row));
 	_speed_plasma = float(sync_get_val(speed_plasma, row));
 
+	_offset_snow = float(sync_get_val(offset_snow, row));
 	_speed_snow = float(sync_get_val(speed_snow, row));
+
+	_offset_circlehex = float(sync_get_val(offset_circlehex, row));
+	_speed_circlehex = float(sync_get_val(speed_circlehex, row));
+
+	_offset_p2 = float(sync_get_val(offset_p2, row));
+	_speed_p2 = float(sync_get_val(speed_p2, row));
 
 	_peilaus_plasma = float(sync_get_val(peilaus_plasma, row));
 
@@ -233,7 +269,7 @@ void ofApp::update() {
 		for (int i = 0; i < 2; i++) {
 			CircleHex.beginS();
 			CircleHex.setPingPongFbo("tex0", fbo.getTexture(), 0);
-			if (i == 1)CircleHex.update(time);
+			if (i == 1)CircleHex.update(time,_offset_circlehex,_speed_circlehex);
 			CircleHex.endS();
 		}
 	}
@@ -293,14 +329,14 @@ void ofApp::update() {
 		for (int i = 0; i < 2; i++) {
 			SnowCrash.beginS();
 			SnowCrash.setPingPongFbo("tex0", SnowCrash.getTexture(), 0);
-			if (i == 1)SnowCrash.update(time,_speed_snow);
+			if (i == 1)SnowCrash.update(time,_offset_snow, _speed_snow);
 			SnowCrash.endS();
 		}
 	}
 
 	for (int i = 0; i < 2; i++) {
 		P2.beginS();
-		if (i == 1)P2.update(time);
+		if (i == 1)P2.update(time,_offset_p2,_speed_p2);
 		P2.endS();
 	}
 
@@ -308,16 +344,21 @@ void ofApp::update() {
 }
 
 void ofApp::renderText() {
+	int index = int(_text_index);
+	string currentLine = texts.at(index);
+
+	string currentText = ofSplitString(currentLine, ":")[0];
+	int font = atoi(ofSplitString(currentLine, ":")[1].c_str());
 
 	ofSetColor(0, 0, 0, 255 * _blend_6);
-	if (_text_index == 0.0) ttf.drawStringCentered("Quadtrip", ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
-	if (_text_index == 1.0) ttf.drawStringCentered("Presents", ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
+	if (font == 1) ttf.drawStringCentered(currentText, ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
+	else if (font == 2) ttf2.drawStringCentered(currentText, ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
+	else if (font == 3) ttf3.drawStringCentered(currentText, ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
 
 	ofSetColor(255, 255, 255, 255 * _blend_6);
-	if (_text_index == 0.0)  ttf.drawStringCentered("Quadtrip", ofGetWidth() / 2, ofGetHeight() / 2);
-	if (_text_index == 1.0)  ttf.drawStringCentered("Presents", ofGetWidth() / 2, ofGetHeight() / 2);
-	if (_text_index == 2.0)  ttf.drawStringCentered("a new demo", ofGetWidth() / 2, ofGetHeight() / 2);
-	if (_text_index == 3.0)  ttf2.drawStringCentered("tears", ofGetWidth() / 2, ofGetHeight() / 2);
+	if (font == 1)  ttf.drawStringCentered(currentText, ofGetWidth() / 2, ofGetHeight() / 2);
+	else if (font == 2) ttf2.drawStringCentered(currentText, ofGetWidth() / 2, ofGetHeight() / 2);
+	else if (font == 3) ttf3.drawStringCentered(currentText, ofGetWidth() / 2, ofGetHeight() / 2);
 
 }
 
@@ -404,16 +445,6 @@ void ofApp::draw() {
 		fbo.begin();
 		ofSetColor(255, 255, 255, 255 * _blend_2);
 		myVideo.draw(0, 0, width, height);
-
-		ofSetColor(255, 255, 255, 255 * _blend_6);
-		if (_text_index == 2.0)  ttf.drawStringCentered("a new demo", ofGetWidth() / 2, ofGetHeight() / 2);
-		ofSetColor(0, 0, 0, 255 * _blend_6);
-		if (_text_index == 2.0) ttf.drawStringCentered("a new demo", ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
-
-		ofSetColor(255, 255, 255, 255 * _blend_6);
-		if (_text_index == 3.0)  ttf2.drawStringCentered("tears", ofGetWidth() / 2, ofGetHeight() / 2);
-		ofSetColor(0, 0, 0, 255 * _blend_6);
-		if (_text_index == 3.0) ttf2.drawStringCentered("tears", ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
 
 		fbo.end();
 	}

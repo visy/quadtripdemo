@@ -3,6 +3,7 @@ uniform vec3      mouse;
 uniform vec2      resolution;           // viewport resolution (in pixels)
 
 uniform float speed;
+uniform float offset;
 
 uniform sampler2D tex0;
 
@@ -62,7 +63,7 @@ vec4 B(vec2 fragCoord)
 
 void main()
 {
-   effutime = time*2.;
+   effutime = (time+offset)*2.;
    vec2 uvg = vec2(cos(gl_FragCoord.x + effutime) + gl_FragCoord.x, sin(gl_FragCoord.y + effutime*10.) + gl_FragCoord.y) / resolution.xy;
    vec2 uv = gl_FragCoord.xy / resolution.xy;
    float pp = 0.05 - abs(atan(effutime*1.1 + uv.y*10. + uvg.x*1.)*cos(uv.y));

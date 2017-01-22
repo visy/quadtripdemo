@@ -1,5 +1,7 @@
 uniform float time;
 uniform vec2 resolution;
+uniform float offset;
+
 /*
 #define FIELD 16.0
 #define ITERATION 10
@@ -39,15 +41,15 @@ void main() {
 	gl_FragCoord.y *= ratio;
 	vec2 position = (gl_FragCoord.xy / resolution.xy) - vec2(0.5, 0.5*ratio);
 	vec3 p = position.xyx*16.;
-	p.z = 16. + 1.5 + time*0.5;
+	p.z = 16. + 1.5 + (time+offset)*0.5;
 
 	vec2 off = 4.5 / resolution.xy;
 	p *= 0.8;
 	vec2 value = vec2(0);
-	value += wolfFaceEQ(p + vec3(0.0, 1.0, 0.0), time);
-	value += wolfFaceEQ(p + vec3(off.x, 1.0, 0.0), time);
-	value += wolfFaceEQ(p + vec3(0.0, 1.0 + off.y, 0.0), time);
-	value += wolfFaceEQ(p + vec3(vec2(0, 1) + off, 0.0), time);
+	value += wolfFaceEQ(p + vec3(0.0, 1.0, 0.0), (time+offset));
+	value += wolfFaceEQ(p + vec3(off.x, 1.0, 0.0), (time+offset));
+	value += wolfFaceEQ(p + vec3(0.0, 1.0 + off.y, 0.0), (time+offset));
+	value += wolfFaceEQ(p + vec3(vec2(0, 1) + off, 0.0), (time+offset));
 
 	value /= 4.0;
 	vec3 color = computeColor(value);

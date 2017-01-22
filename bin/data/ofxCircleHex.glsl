@@ -1,7 +1,7 @@
 uniform float     time;           // shader playback time (in seconds)
 uniform vec3      mouse;
 uniform vec2      resolution;           // viewport resolution (in pixels)
-
+uniform float offset;
 uniform sampler2D tex0;          // BufB
 
 
@@ -89,7 +89,7 @@ vec3 draw_trace(float d, vec2 p, vec2 ro, vec2 rd) {
 }
 
 void main() {
-   iGlobalTime = time;
+   iGlobalTime = time+offset;
    float t = iGlobalTime * 0.5;
    vec2 uv = squareFrame(resolution.xy, gl_FragCoord);
    float d;
