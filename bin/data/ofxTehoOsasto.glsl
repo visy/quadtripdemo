@@ -23,7 +23,7 @@ vec3 pastelizer(float h) {
 
 void main()
 {
-   iGlobalTime = cos(time)*18.;
+   iGlobalTime = abs(cos(time)*10.);
    vec2 U = gl_FragCoord.xy / resolution.xy*1000.1;
    vec4 O = vec4(0.0);
    vec4 fb = texture2D(tex0, U);
