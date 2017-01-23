@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sync xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" rows="4610">
   <TimeFormat>{row}</TimeFormat>
-  <AudioFile>C:\Users\turbohitler420\Downloads\quadtrip_syncpack\data\music.mp3</AudioFile>
+  <AudioFile>C:\dev\of\ofxFX(Seb)\ShadertoyMultipass\bin\data\music.mp3</AudioFile>
   <AudioOffset>0</AudioOffset>
   <BPM>133</BPM>
   <RowsPerBeat>8</RowsPerBeat>
