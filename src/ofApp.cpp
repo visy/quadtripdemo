@@ -132,6 +132,8 @@ void ofApp::setup(){
 		texts.push_back(line);
 	}
 
+	TuringPatternInitordie();
+
 	ofSetVerticalSync(true);
 	ofSetFrameRate(60);
     ofBackground(0);
@@ -148,8 +150,6 @@ void ofApp::setup(){
 	post.createPass<LUTPass>()->loadLUT("tex.cube")->setEnabled(false);
 
 	model.loadModel("test.obj");
-
-	TuringPatternInitordie();
 
     noise.load("noise.png");
     noise.allocate(width, height, OF_IMAGE_COLOR);
@@ -474,9 +474,8 @@ void ofApp::draw() {
 	if (_blend_5 > 0.0) {
 		ofSetColor(210, 215, 250, 255*_blend_5);
 
-		float offs = -40.;
-		model.setPosition(ofGetWidth() / 2, (float)ofGetHeight() * 0.65 - (time-offs)*1.3, (time-offs)*40.);
-		float ss = 1.0 + (time-offs)*0.2;
+		model.setPosition(ofGetWidth() / 2, (float)ofGetHeight() * 0.75 - time*1.3, time*20.);
+		float ss = 0.8 + time*0.2;
 		model.setScale(ss, ss, ss);
 		model.drawFaces();
 	}
