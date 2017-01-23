@@ -157,9 +157,9 @@ void ofApp::setup() {
 	absce.load("absce.png");
 	absce.allocate(869, 872, OF_IMAGE_COLOR_ALPHA);
 
-	ttf.loadFont("font.ttf", 100*2);
-	ttf2.loadFont("font3.ttf", 100*2);
-	ttf3.loadFont("font2.ttf", 100*2);
+	ttf.loadFont("font.ttf", 100*1.5);
+	ttf2.loadFont("font3.ttf", 100*1.5);
+	ttf3.loadFont("font2.ttf", 100*1.5);
 	ttf_term.loadFont("font_term.ttf", 24*1.5);
 
 	rocket = sync_create_device("sync");
