@@ -120,6 +120,9 @@ static struct sync_cb cb = {
 void ofApp::setup() {
 
 	self = this;
+
+	ofSetLogLevel(OF_LOG_SILENT);
+
 	width = ofGetWidth();
 	height = ofGetHeight();
 
@@ -212,8 +215,10 @@ void ofApp::setup() {
 	ofClear(0, 0, 0, 0);
 	fboText.end();
 
-	myVideo.loadMovie("video2.mov");
-	myVideo.play();
+	myVideo.enableThreadedLoad(false);
+	myVideo.loadSequence("frame","jpg",1,1500,4);
+	myVideo.preloadAllFrames();
+	myVideo.setFrameRate(25);
 
 	mySound.load("music.mp3");
 	mySound.play();
@@ -264,10 +269,6 @@ void ofApp::update() {
 
 	_peilaus_plasma = float(sync_get_val(peilaus_plasma, row));
 
-
-
-	if (_blend_2 > 0.0)
-		myVideo.update();
 
 
 	if (_blend_1 > 0.0) {
@@ -450,7 +451,7 @@ void ofApp::draw() {
 	if (_blend_2 > 0.0) {
 		fbo.begin();
 		ofSetColor(255, 255, 255, 255 * _blend_2);
-		myVideo.draw(0, 0, width, height);
+		myVideo.getFrameForTime(time+8.)->draw(0, 0,width,height);
 
 		fbo.end();
 	}

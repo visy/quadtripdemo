@@ -15,6 +15,7 @@
 #include "ofxAssimpModelLoader.h"
 #include "ofxCenteredTrueTypeFont.h"
 #include "ofxPostProcessing.h"
+#include "ofxImageSequence.h"
 
 class ofApp : public ofBaseApp{
     
@@ -58,7 +59,7 @@ public:
 	ofImage absce;
 
 	ofSoundPlayer mySound;
-	ofVideoPlayer myVideo;
+	ofxImageSequence myVideo;
 	ofFbo fbo;
 
 	ofFbo fboText;
