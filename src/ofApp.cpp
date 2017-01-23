@@ -139,7 +139,7 @@ void ofApp::setup(){
     
     ofDisableArbTex();
 
-	post.init(width/2., height/2.);
+	post.init(width, height);
 	post.createPass<BloomPass>()->setEnabled(false);
 	post.createPass<GodRaysPass>()->setEnabled(false);
 	post.createPass<ToonPass>()->setEnabled(false);
@@ -157,10 +157,10 @@ void ofApp::setup(){
 	absce.load("absce.png");
 	absce.allocate(869, 872, OF_IMAGE_COLOR_ALPHA);
 
-	ttf.loadFont("font.ttf", 100);
-	ttf2.loadFont("font3.ttf", 100);
-	ttf3.loadFont("font2.ttf", 100);
-	ttf_term.loadFont("font_term.ttf", 24);
+	ttf.loadFont("font.ttf", 100*2);
+	ttf2.loadFont("font3.ttf", 100*2);
+	ttf3.loadFont("font2.ttf", 100*2);
+	ttf_term.loadFont("font_term.ttf", 24*2);
 
 	rocket = sync_create_device("sync");
 #ifndef SYNC_PLAYER
@@ -202,10 +202,17 @@ void ofApp::setup(){
 
 	fbo.allocate(videoWidth, videoHeight);
 
-	// clear fbo
+	fboText.allocate(1920,1080);
+
+	// clear fbos
 	fbo.begin();
 	ofClear(255, 255, 255, 0);
 	fbo.end();
+
+	fboText.begin();
+	ofClear(0, 0, 0, 0);
+	fboText.end();
+
 
 	myVideo.loadMovie("video2.mov");
 	myVideo.play();
@@ -351,14 +358,14 @@ void ofApp::renderText() {
 	int font = atoi(ofSplitString(currentLine, ":")[1].c_str());
 
 	ofSetColor(0, 0, 0, 255 * _blend_6);
-	if (font == 1) ttf.drawStringCentered(currentText, ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
-	else if (font == 2) ttf2.drawStringCentered(currentText, ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
-	else if (font == 3) ttf3.drawStringCentered(currentText, ofGetWidth() / 2 + 8, ofGetHeight() / 2 + 8);
+	if (font == 1) ttf.drawStringCentered(currentText, fboText.getWidth() / 2 + 8, fboText.getHeight() / 2 + 8);
+	else if (font == 2) ttf2.drawStringCentered(currentText, fboText.getWidth() / 2 + 8, fboText.getHeight() / 2 + 8);
+	else if (font == 3) ttf3.drawStringCentered(currentText, fboText.getWidth() / 2 + 8, fboText.getHeight() / 2 + 8);
 
 	ofSetColor(255, 255, 255, 255 * _blend_6);
-	if (font == 1)  ttf.drawStringCentered(currentText, ofGetWidth() / 2, ofGetHeight() / 2);
-	else if (font == 2) ttf2.drawStringCentered(currentText, ofGetWidth() / 2, ofGetHeight() / 2);
-	else if (font == 3) ttf3.drawStringCentered(currentText, ofGetWidth() / 2, ofGetHeight() / 2);
+	if (font == 1)  ttf.drawStringCentered(currentText, fboText.getWidth() / 2, fboText.getHeight() / 2);
+	else if (font == 2) ttf2.drawStringCentered(currentText, fboText.getWidth() / 2, fboText.getHeight() / 2);
+	else if (font == 3) ttf3.drawStringCentered(currentText, fboText.getWidth() / 2, fboText.getHeight() / 2);
 
 }
 
@@ -383,9 +390,9 @@ string tekstit[20] =
 
 void ofApp::renderTerm() {
 	static float term_x = 18.;
-	float term_y = 22.;
+	float term_y = 22.*2;
 
-	ofSetColor(128, 128, 128, 128);
+	ofSetColor(128, 128, 128, 255);
 
 	int tt = (int)round(time*2.6);
 
@@ -393,7 +400,7 @@ void ofApp::renderTerm() {
 
 	for (int i = 0; i <= tt; i++) {
 		ttf_term.drawString(tekstit[i], term_x, term_y);
-		term_y += 26;
+		term_y += 26*2;
 	}
 }
 
@@ -467,11 +474,17 @@ void ofApp::draw() {
 	if (_blend_5 > 0.0) {
 		ofSetColor(210, 215, 250, 255*_blend_5);
 
-		model.setPosition(ofGetWidth() / 2, (float)ofGetHeight() * 0.65 - time*1.3, time*40.);
-		float ss = 1.0 + time*0.2;
+		float offs = -40.;
+		model.setPosition(ofGetWidth() / 2, (float)ofGetHeight() * 0.65 - (time-offs)*1.3, (time-offs)*40.);
+		float ss = 1.0 + (time-offs)*0.2;
 		model.setScale(ss, ss, ss);
 		model.drawFaces();
 	}
+
+
+	fboText.begin();
+	ofClear(0, 0, 0, 0);
+
 
 	if (_blend_6 > 0.0) {
 		renderText();
@@ -481,8 +494,12 @@ void ofApp::draw() {
 		ofEnableAlphaBlending();
 
 		ofSetColor(255 * _blend_8, 255 * _blend_8, 255 * _blend_8, 255);
-		absce.draw(width / 2 - 256, height / 2 - 256, 512, 512);
+		absce.setAnchorPoint(absce.getWidth() / 2, absce.getHeight() / 2.2);
+		absce.draw(fboText.getWidth() /2, fboText.getHeight()/2, fboText.getHeight()/1.4, fboText.getHeight() / 1.4);
 	}
+
+	fboText.end();
+
 
 
 	if (_blend_9 > 0.0) {
@@ -499,9 +516,21 @@ void ofApp::draw() {
 		P2.draw(0, 0, width, height);
 	}
 
-	post.end();
+	fboText.begin();
 
 	renderText();
+
+	if (time < 6.)
+		renderTerm();
+
+	fboText.end();
+
+	ofEnableAlphaBlending();
+	ofEnableBlendMode(OF_BLENDMODE_SCREEN);
+	fboText.draw(0, 0, width, height);
+
+	post.end();
+	
 
 	if (_blend_7 > 0.0) {
 		ofSetColor(255, 255, 255, 255 * _blend_7);
@@ -509,21 +538,17 @@ void ofApp::draw() {
 		TehoOsasto.draw(0, 0, width, height);
 	}
 
-	if (time < 6.)
-		renderTerm();
-
 }
 
 void ofApp::TuringPatternInitordie() {
-    TuringPattern.allocate(512, 512);
+    TuringPattern.allocate(1024, 1024);
 
-    TuringPattern_A.allocate(512, 512);
-	TuringPattern_B.allocate(512, 512);
+    TuringPattern_A.allocate(1024, 1024);
+	TuringPattern_B.allocate(1024, 1024);
 
-	CircleHex.allocate(1024, 1024);
-	CircleHex.allocate(512, 512);
+	CircleHex.allocate(2048, 2048);
 
-	Plasma.allocate(512, 512);
+	Plasma.allocate(1024, 1024);
 
 	TehoOsasto.allocate(512, 512);
 	SnowCrash.allocate(width, height);

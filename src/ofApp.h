@@ -61,6 +61,8 @@ public:
 	ofVideoPlayer myVideo;
 	ofFbo fbo;
 
+	ofFbo fboText;
+
 	ofxCenteredTrueTypeFont ttf;
 	ofxCenteredTrueTypeFont ttf2;
 	ofxCenteredTrueTypeFont ttf3;
