@@ -101,7 +101,7 @@ static void pause(void *d, int flag)
 
 static void set_row(void *d, int row)
 {
-	(*self).mySound.setPositionMS((((double)row)/row_rate)*1000.);
+	(*self).mySound.setPositionMS((((double)row) / row_rate)*1000.);
 }
 
 static int is_playing(void *d)
@@ -117,29 +117,27 @@ static struct sync_cb cb = {
 
 #endif /* !defined(SYNC_PLAYER) */
 //--------------------------------------------------------------
-void ofApp::setup(){
-    
+void ofApp::setup() {
+
 	self = this;
-    width = ofGetWidth();
-    height = ofGetHeight();
+	width = ofGetWidth();
+	height = ofGetHeight();
 
 	videoWidth = width;
 	videoHeight = height;
-    
+
 	ofBuffer buffer = ofBufferFromFile("text.dat");
 
 	for (auto line : buffer.getLines()) {
 		texts.push_back(line);
 	}
 
-	TuringPatternInitordie();
-
 	ofSetVerticalSync(true);
 	ofSetFrameRate(60);
-    ofBackground(0);
-    ofDisableAlphaBlending();
-    
-    ofDisableArbTex();
+	ofBackground(0);
+	ofDisableAlphaBlending();
+
+	ofDisableArbTex();
 
 	post.init(width, height);
 	post.createPass<BloomPass>()->setEnabled(false);
@@ -151,8 +149,10 @@ void ofApp::setup(){
 
 	model.loadModel("test.obj");
 
-    noise.load("noise.png");
-    noise.allocate(width, height, OF_IMAGE_COLOR);
+	TuringPatternInitordie();
+
+	noise.load("noise.png");
+	noise.allocate(width, height, OF_IMAGE_COLOR);
 
 	absce.load("absce.png");
 	absce.allocate(869, 872, OF_IMAGE_COLOR_ALPHA);
@@ -160,7 +160,7 @@ void ofApp::setup(){
 	ttf.loadFont("font.ttf", 100*2);
 	ttf2.loadFont("font3.ttf", 100*2);
 	ttf3.loadFont("font2.ttf", 100*2);
-	ttf_term.loadFont("font_term.ttf", 24*2);
+	ttf_term.loadFont("font_term.ttf", 24*1.5);
 
 	rocket = sync_create_device("sync");
 #ifndef SYNC_PLAYER
@@ -201,8 +201,7 @@ void ofApp::setup(){
 	peilaus_plasma = sync_get_track(rocket, "peilaus_plasma");
 
 	fbo.allocate(videoWidth, videoHeight);
-
-	fboText.allocate(1920,1080);
+	fboText.allocate(1920, 1080);
 
 	// clear fbos
 	fbo.begin();
@@ -212,7 +211,6 @@ void ofApp::setup(){
 	fboText.begin();
 	ofClear(0, 0, 0, 0);
 	fboText.end();
-
 
 	myVideo.loadMovie("video2.mov");
 	myVideo.play();
@@ -276,16 +274,16 @@ void ofApp::update() {
 		for (int i = 0; i < 2; i++) {
 			CircleHex.beginS();
 			CircleHex.setPingPongFbo("tex0", fbo.getTexture(), 0);
-			if (i == 1)CircleHex.update(time,_offset_circlehex,_speed_circlehex);
+			if (i == 1)CircleHex.update(time, _offset_circlehex, _speed_circlehex);
 			CircleHex.endS();
 		}
 	}
 
 	/*
-		if (time > 101.0) {
-			ofApp:exit();
-			std::exit(0);
-		}
+	if (time > 101.0) {
+	ofApp:exit();
+	std::exit(0);
+	}
 	*/
 
 	if (_blend_3 > 0.0) {
@@ -318,7 +316,7 @@ void ofApp::update() {
 		for (int i = 0; i < 2; i++) {
 			Plasma.beginS();
 			Plasma.setPingPongFbo("tex0", Plasma.getTexture(), 0);
-			if (i == 1)Plasma.update(time, _offset_plasma,_speed_plasma,_peilaus_plasma);
+			if (i == 1)Plasma.update(time, _offset_plasma, _speed_plasma, _peilaus_plasma);
 			Plasma.endS();
 		}
 	}
@@ -336,14 +334,14 @@ void ofApp::update() {
 		for (int i = 0; i < 2; i++) {
 			SnowCrash.beginS();
 			SnowCrash.setPingPongFbo("tex0", SnowCrash.getTexture(), 0);
-			if (i == 1)SnowCrash.update(time,_offset_snow, _speed_snow);
+			if (i == 1)SnowCrash.update(time, _offset_snow, _speed_snow);
 			SnowCrash.endS();
 		}
 	}
 
 	for (int i = 0; i < 2; i++) {
 		P2.beginS();
-		if (i == 1)P2.update(time,_offset_p2,_speed_p2);
+		if (i == 1)P2.update(time, _offset_p2, _speed_p2);
 		P2.endS();
 	}
 
@@ -371,26 +369,26 @@ void ofApp::renderText() {
 
 string tekstit[20] =
 {
-"Amyglada Inject System v2.01 booting...",
-"* running on Quadtrip 32yo.t (licenced)*",
-"---------------------------------------",
-"* probing devices...",
-" ",
-"found headset!",
-"found injection port!",
-" ",
-"* waiting for devices to respond...",
-" ",
-"* contacting licence server(s)...",
-"192 days since previous system check",
-"continuing with trial period (162 days over!)",
-" ",
-"ready for connections...",
+	"Amyglada Inject System v2.01 booting...",
+	"* running on Quadtrip 32yo.t (licenced)*",
+	"---------------------------------------",
+	"* probing devices...",
+	" ",
+	"found headset!",
+	"found injection port!",
+	" ",
+	"* waiting for devices to respond...",
+	" ",
+	"* contacting licence server(s)...",
+	"192 days since previous system check",
+	"continuing with trial period (162 days over!)",
+	" ",
+	"ready for connections...",
 };
 
 void ofApp::renderTerm() {
 	static float term_x = 18.;
-	float term_y = 22.*2;
+	float term_y = 22. * 2;
 
 	ofSetColor(128, 128, 128, 255);
 
@@ -400,7 +398,7 @@ void ofApp::renderTerm() {
 
 	for (int i = 0; i <= tt; i++) {
 		ttf_term.drawString(tekstit[i], term_x, term_y);
-		term_y += 26*2;
+		term_y += 26 * 2;
 	}
 }
 
@@ -411,7 +409,8 @@ void ofApp::draw() {
 
 	if (_post_bloom > 0.0) {
 		post[0]->setEnabled(true);
-	} else {
+	}
+	else {
 		post[0]->setEnabled(false);
 	}
 
@@ -439,7 +438,7 @@ void ofApp::draw() {
 	// render scene
 
 	post.begin();
-	ofClear(0, 255);  
+	ofClear(0, 255);
 	ofDisableBlendMode();
 	ofDisableAlphaBlending();
 
@@ -464,26 +463,24 @@ void ofApp::draw() {
 		ofSetColor(255, 255, 255, 255 * _blend_3);
 		TuringPattern.draw(0, 0, width, height);
 	}
-	
+
 	if (_blend_4 > 0.0) {
 		Plasma.swap();
 		ofSetColor(255, 255, 255, 255 * _blend_4);
-		Plasma.draw(0,0,width,height);
+		Plasma.draw(0, 0, width, height);
 	}
 
 	if (_blend_5 > 0.0) {
-		ofSetColor(210, 215, 250, 255*_blend_5);
+		ofSetColor(210, 215, 250, 255 * _blend_5);
 
-		model.setPosition(ofGetWidth() / 2, (float)ofGetHeight() * 0.75 - time*1.3, time*20.);
-		float ss = 0.8 + time*0.2;
+		model.setPosition(ofGetWidth() / 2, (float)ofGetHeight() * 0.65 - time*1.3, time*40.);
+		float ss = 1.0 + time*0.2;
 		model.setScale(ss, ss, ss);
 		model.drawFaces();
 	}
 
-
 	fboText.begin();
 	ofClear(0, 0, 0, 0);
-
 
 	if (_blend_6 > 0.0) {
 		renderText();
@@ -494,11 +491,10 @@ void ofApp::draw() {
 
 		ofSetColor(255 * _blend_8, 255 * _blend_8, 255 * _blend_8, 255);
 		absce.setAnchorPoint(absce.getWidth() / 2, absce.getHeight() / 2.2);
-		absce.draw(fboText.getWidth() /2, fboText.getHeight()/2, fboText.getHeight()/1.4, fboText.getHeight() / 1.4);
+		absce.draw(fboText.getWidth() / 2, fboText.getHeight() / 2, fboText.getHeight() / 1.4, fboText.getHeight() / 1.4);
 	}
 
 	fboText.end();
-
 
 
 	if (_blend_9 > 0.0) {
@@ -523,13 +519,15 @@ void ofApp::draw() {
 		renderTerm();
 
 	fboText.end();
-
 	ofEnableAlphaBlending();
 	ofEnableBlendMode(OF_BLENDMODE_SCREEN);
 	fboText.draw(0, 0, width, height);
 
 	post.end();
-	
+
+
+	ofDisableAlphaBlending();
+	ofDisableBlendMode();
 
 	if (_blend_7 > 0.0) {
 		ofSetColor(255, 255, 255, 255 * _blend_7);
@@ -537,12 +535,13 @@ void ofApp::draw() {
 		TehoOsasto.draw(0, 0, width, height);
 	}
 
+
 }
 
 void ofApp::TuringPatternInitordie() {
-    TuringPattern.allocate(1024, 1024);
+	TuringPattern.allocate(1024, 1024);
 
-    TuringPattern_A.allocate(1024, 1024);
+	TuringPattern_A.allocate(1024, 1024);
 	TuringPattern_B.allocate(1024, 1024);
 
 	CircleHex.allocate(2048, 2048);
@@ -556,56 +555,56 @@ void ofApp::TuringPatternInitordie() {
 }
 
 //--------------------------------------------------------------
-void ofApp::keyPressed(int key){
-    
+void ofApp::keyPressed(int key) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::keyReleased(int key){
-    
+void ofApp::keyReleased(int key) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
-    
+void ofApp::mouseMoved(int x, int y) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
-    
+void ofApp::mouseDragged(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-    
+void ofApp::mousePressed(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
-    
+void ofApp::mouseReleased(int x, int y, int button) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
-    
+void ofApp::mouseEntered(int x, int y) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
-    
+void ofApp::mouseExited(int x, int y) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
-    
+void ofApp::windowResized(int w, int h) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
-    
+void ofApp::gotMessage(ofMessage msg) {
+
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-    
+void ofApp::dragEvent(ofDragInfo dragInfo) {
+
 }
