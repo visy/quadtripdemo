@@ -149,10 +149,10 @@ void ofApp::setup() {
 	post.createPass<ToonPass>()->setEnabled(false);
 	post.createPass<FxaaPass>();
 	post.createPass<LUTPass>()->loadLUT("tex.cube")->setEnabled(false);
-
-	//dynamic_cast<NobyPass*>(&post[0])
-	post[0]->setw(width);
-	post[0]->seth(height);
+	//post.createPass<Noby2Pass>()->setEnabled(true);
+	
+	post[0]->setReso(width, height);
+	//post[6]->setReso(width, height);
 
 	model.loadModel("test.obj");
 

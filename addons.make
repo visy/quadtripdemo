@@ -1,4 +1,4 @@
 ofxAssimpModelLoader
-ofxGui
 ofxFX(Seb)
+ofxGui
 ofxPostProcessing
