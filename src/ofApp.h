@@ -9,6 +9,7 @@
 #include "ofxCircleHex.h"
 #include "ofxPlasma.h"
 #include "ofxTehoOsasto.h"
+#include "ofxNobyPostfx.h"
 #include "ofxSnowCrash.h"
 #include "ofxP2.h"
 #include "ofxGui.h"

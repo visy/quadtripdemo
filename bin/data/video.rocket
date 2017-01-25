@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sync xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" rows="4610">
   <TimeFormat>{row}</TimeFormat>
-  <AudioFile>C:\Users\turbohitler420\Downloads\quadtrip_syncpack\data\music.mp3</AudioFile>
+  <AudioFile>O:\Koodi\demoscene\quadtripdemo\bin\data\music.mp3</AudioFile>
   <AudioOffset>0</AudioOffset>
   <BPM>133</BPM>
   <RowsPerBeat>8</RowsPerBeat>
@@ -452,8 +452,10 @@
     <track name="post_hortilt" visible="true">
       <key interpolation="0" row="64" value="0" />
       <key interpolation="0" row="72" value="0" />
+      <key interpolation="0" row="155" value="1" />
+      <key interpolation="0" row="157" value="0" />
       <key interpolation="0" row="182" value="1" />
-      <key interpolation="0" row="183" value="0" />
+      <key interpolation="0" row="184" value="0" />
       <key interpolation="0" row="246" value="1" />
       <key interpolation="0" row="248" value="0" />
       <key interpolation="0" row="493" value="1" />
@@ -488,6 +490,10 @@
     <track name="post_lut" visible="true">
       <key interpolation="0" row="64" value="0" />
       <key interpolation="0" row="140" value="1" />
+      <key interpolation="0" row="509" value="0" />
+      <key interpolation="0" row="522" value="1" />
+      <key interpolation="2" row="2036" value="-11" />
+      <key interpolation="0" row="2059" value="1" />
       <key interpolation="0" row="2543" value="1" />
       <key interpolation="0" row="2550" value="1" />
       <key interpolation="0" row="3494" value="0" />
@@ -607,7 +613,18 @@
     </track>
     <track name="blend_peura" visible="true">
       <key interpolation="1" row="0" value="0" />
-      <key interpolation="1" row="17" value="0.3" />
+      <key interpolation="0" row="18" value="0.08" />
+      <key interpolation="0" row="19" value="0.67" />
+      <key interpolation="1" row="20" value="0.09" />
+      <key interpolation="0" row="25" value="0.11" />
+      <key interpolation="0" row="26" value="0.51" />
+      <key interpolation="1" row="27" value="0.12" />
+      <key interpolation="1" row="48" value="0.2" />
+      <key interpolation="0" row="66" value="0.13" />
+      <key interpolation="0" row="67" value="0.38" />
+      <key interpolation="1" row="68" value="0.12" />
+      <key interpolation="1" row="77" value="0.08" />
+      <key interpolation="1" row="79" value="0.07" />
       <key interpolation="0" row="98" value="0" />
       <key interpolation="0" row="2035" value="1" />
       <key interpolation="0" row="2539" value="0" />
@@ -676,6 +693,7 @@
     </track>
     <track name="offset_p2" visible="true">
       <key interpolation="0" row="0" value="0" />
+      <key interpolation="0" row="2484" value="23" />
       <key interpolation="0" row="4609" value="0" />
     </track>
     <track name="speed_p2" visible="true">
@@ -683,6 +701,8 @@
       <key interpolation="0" row="2034" value="0.6" />
       <key interpolation="3" row="2288" value="0.6" />
       <key interpolation="0" row="2292" value="1" />
+      <key interpolation="3" row="2506" value="1" />
+      <key interpolation="3" row="2534" value="0.9" />
       <key interpolation="3" row="2535" value="1" />
       <key interpolation="0" row="2539" value="2" />
       <key interpolation="0" row="3084" value="12" />

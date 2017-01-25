@@ -143,12 +143,16 @@ void ofApp::setup() {
 	ofDisableArbTex();
 
 	post.init(width, height);
+	post.createPass<NobyPass>()->setEnabled(true);
 	post.createPass<BloomPass>()->setEnabled(false);
 	post.createPass<GodRaysPass>()->setEnabled(false);
 	post.createPass<ToonPass>()->setEnabled(false);
-
 	post.createPass<FxaaPass>();
 	post.createPass<LUTPass>()->loadLUT("tex.cube")->setEnabled(false);
+
+	//dynamic_cast<NobyPass*>(&post[0])
+	post[0]->setw(width);
+	post[0]->seth(height);
 
 	model.loadModel("test.obj");
 
@@ -409,31 +413,31 @@ void ofApp::draw() {
 	// enable / disable post effects in post chain
 
 	if (_post_bloom > 0.0) {
-		post[0]->setEnabled(true);
-	}
-	else {
-		post[0]->setEnabled(false);
-	}
-
-	if (_post_godrays > 0.0) {
 		post[1]->setEnabled(true);
 	}
 	else {
 		post[1]->setEnabled(false);
 	}
 
-	if (_post_hortilt > 0.0) {
+	if (_post_godrays > 0.0) {
 		post[2]->setEnabled(true);
 	}
 	else {
 		post[2]->setEnabled(false);
 	}
 
-	if (_post_lut > 0.0) {
-		post[4]->setEnabled(true);
+	if (_post_hortilt > 0.0) {
+		post[3]->setEnabled(true);
 	}
 	else {
-		post[4]->setEnabled(false);
+		post[3]->setEnabled(false);
+	}
+
+	if (_post_lut > 0.0) {
+		post[5]->setEnabled(true);
+	}
+	else {
+		post[5]->setEnabled(false);
 	}
 
 	// render scene
@@ -520,6 +524,11 @@ void ofApp::draw() {
 		renderTerm();
 
 	fboText.end();
+
+	
+
+	
+	
 	ofEnableAlphaBlending();
 	ofEnableBlendMode(OF_BLENDMODE_SCREEN);
 	fboText.draw(0, 0, width, height);

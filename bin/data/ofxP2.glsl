@@ -38,8 +38,9 @@ vec3 computeColor(vec2 fx) {
 
 void main() {
 	float ratio = resolution.y / resolution.x;
-	gl_FragCoord.y *= ratio;
-	vec2 position = (gl_FragCoord.xy / resolution.xy) - vec2(0.5, 0.5*ratio);
+	vec2 fakecoord = gl_FragCoord;
+	fakecoord.y *= ratio;
+	vec2 position = (fakecoord.xy / resolution.xy) - vec2(0.5, 0.5*ratio);
 	vec3 p = position.xyx*16.;
 	p.z = 16. + 1.5 + (time+offset)*0.5;
 
