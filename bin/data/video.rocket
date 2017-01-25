@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sync xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" rows="4610">
   <TimeFormat>{row}</TimeFormat>
-  <AudioFile>O:\Koodi\demoscene\quadtripdemo\bin\data\music.mp3</AudioFile>
+  <AudioFile>C:\dev\of\ofxFX(Seb)\ShadertoyMultipass\bin\data\music.mp3</AudioFile>
   <AudioOffset>0</AudioOffset>
   <BPM>133</BPM>
   <RowsPerBeat>8</RowsPerBeat>
@@ -184,7 +184,7 @@
       <key interpolation="0" row="0" value="0" />
       <key interpolation="1" row="132" value="0" />
       <key interpolation="1" row="161" value="0.1" />
-      <key interpolation="0" row="211" value="0.5999999" />
+      <key interpolation="3" row="211" value="0.5999999" />
       <key interpolation="0" row="450" value="0" />
       <key interpolation="0" row="508" value="0" />
       <key interpolation="0" row="509" value="0" />
