@@ -533,9 +533,12 @@ void ofApp::draw() {
 
 	fboText.end();
 
-	
 
-	
+	if (_blend_7 > 0.0) {
+		ofSetColor(255, 255, 255, 255 * _blend_7);
+		TehoOsasto.swap();
+		TehoOsasto.draw(0, 0, width, height);
+	}
 	
 	ofEnableAlphaBlending();
 	ofEnableBlendMode(OF_BLENDMODE_SCREEN);
@@ -547,11 +550,7 @@ void ofApp::draw() {
 	ofDisableAlphaBlending();
 	ofDisableBlendMode();
 
-	if (_blend_7 > 0.0) {
-		ofSetColor(255, 255, 255, 255 * _blend_7);
-		TehoOsasto.swap();
-		TehoOsasto.draw(0, 0, width, height);
-	}
+	
 
 
 }
