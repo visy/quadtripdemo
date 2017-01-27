@@ -16,7 +16,9 @@ float rand(vec2 x){
 
 void main(){
 	vec2 uv = gl_TexCoord[0].st;
-	vec4 nv = 0.025*vec4(vec3(rand(uv*vec2(220.,440.)+float(frame*43))),1.0);
+	vec2 uvo = uv;
+	uv.x = clamp(uv.x, 0.12, 0.88);
+	vec4 nv = 0.025*vec4(vec3(rand(uvo*vec2(220.,440.)+float(frame*43))),1.0);
 	if(mod(float(frame), 2.0) < 1.0){
 		if(mod(gl_FragCoord.y, 2.0) < 1.0){
 			gl_FragColor = texture2D(texp, uv)*0.975+nv;

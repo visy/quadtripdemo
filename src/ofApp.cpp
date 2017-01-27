@@ -146,17 +146,17 @@ void ofApp::setup() {
 
 	post.init(width, height);
 	post.createPass<NobyPass>()->setEnabled(true);
-	
+
 	post.createPass<BloomPass>()->setEnabled(false);
 	post.createPass<GodRaysPass>()->setEnabled(false);
 	post.createPass<ToonPass>()->setEnabled(false);
-	post.createPass<FxaaPass>();
+	//post.createPass<FxaaPass>();
 	post.createPass<LUTPass>()->loadLUT("tex.cube")->setEnabled(false);
 	
 	post.createPass<Noby2Pass>()->setEnabled(true);
 	
 	post[0]->setReso(width, height);
-	post[6]->setReso(width, height);
+	post[5]->setReso(width, height);
 
 	model.loadModel("test.obj");
 
@@ -240,6 +240,7 @@ void ofApp::update() {
 	time = mySound.getPositionMS()*0.001;
 	double row = time * row_rate;
 
+	post[5]->setTime(time*1000.0);
 
 #ifndef SYNC_PLAYER
 	row = get_row(NULL);
@@ -248,6 +249,7 @@ void ofApp::update() {
 #endif
 
 	_blend_1 = float(sync_get_val(blend_1, row));
+
 	_blend_2 = float(sync_get_val(blend_2, row));
 	_blend_3 = float(sync_get_val(blend_3, row));
 	_blend_4 = float(sync_get_val(blend_4, row));
@@ -280,8 +282,6 @@ void ofApp::update() {
 	_zoom_p2 = float(sync_get_val(zoom_p2, row));
 
 	_peilaus_plasma = float(sync_get_val(peilaus_plasma, row));
-
-
 
 	if (_blend_1 > 0.0) {
 		for (int i = 0; i < 2; i++) {
@@ -357,8 +357,6 @@ void ofApp::update() {
 		if (i == 1)P2.update(time, _offset_p2, _speed_p2, _zoom_p2);
 		P2.endS();
 	}
-
-
 }
 
 void ofApp::renderText() {
@@ -410,7 +408,7 @@ void ofApp::renderTerm() {
 	if (tt > 20) tt = 20;
 
 	for (int i = 0; i <= tt; i++) {
-		ttf_term.drawString(tekstit[i], term_x, term_y);
+		ttf_term.drawString(tekstit[i], ((float)width)*0.22, term_y);
 		term_y += 26 * 2;
 	}
 }
@@ -442,10 +440,10 @@ void ofApp::draw() {
 	}
 
 	if (_post_lut > 0.0) {
-		post[5]->setEnabled(true);
+		post[4]->setEnabled(true);
 	}
 	else {
-		post[5]->setEnabled(false);
+		post[4]->setEnabled(false);
 	}
 	
 	// render scene
@@ -549,10 +547,6 @@ void ofApp::draw() {
 
 	ofDisableAlphaBlending();
 	ofDisableBlendMode();
-
-	
-
-
 }
 
 void ofApp::TuringPatternInitordie() {

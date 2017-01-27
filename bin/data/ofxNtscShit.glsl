@@ -1,4 +1,3 @@
-uniform vec2      resolution;
 uniform float     time;
 uniform sampler2D tex0;
 
@@ -29,7 +28,7 @@ vec4 ntsc(sampler2D src){
 	
 	uv_q.y += u_sync;
 	float shade = 1.1;
-	shade -= rand( vec2(uv_q.x * 0.1 + uv_q.y * 50.0 + frameTime ) ) * 0.5;
+	shade -= rand( 0.04*vec2(uv_q.x * 0.1 + uv_q.y * 50.0 + frameTime*20.0 ) ) * 0.2;
 	
 	vec2 uv_n = uv_q;
 	vec3 yuv = vec3(0.0);

@@ -54,6 +54,6 @@ void main()
     sum = 0.1+0.9*sum;
     sum /= length(sum);
     sum = (-0.2+2.0*sum)*0.9;
-	gl_FragColor = mix(og, sum, 0.14);
+	gl_FragColor = mix(og, sum, 0.16);
 	
 }
