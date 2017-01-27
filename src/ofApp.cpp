@@ -38,6 +38,7 @@ const struct sync_track *speed_circlehex;
 
 const struct sync_track *offset_p2;
 const struct sync_track *speed_p2;
+const struct sync_track *zoom_p2;
 
 const struct sync_track *peilaus_plasma;
 
@@ -67,6 +68,7 @@ float _speed_circlehex;
 
 float _offset_p2;
 float _speed_p2;
+float _zoom_p2;
 
 float _offset_snow;
 float _speed_snow;
@@ -144,15 +146,17 @@ void ofApp::setup() {
 
 	post.init(width, height);
 	post.createPass<NobyPass>()->setEnabled(true);
+	
 	post.createPass<BloomPass>()->setEnabled(false);
 	post.createPass<GodRaysPass>()->setEnabled(false);
 	post.createPass<ToonPass>()->setEnabled(false);
 	post.createPass<FxaaPass>();
 	post.createPass<LUTPass>()->loadLUT("tex.cube")->setEnabled(false);
-	//post.createPass<Noby2Pass>()->setEnabled(true);
+	
+	post.createPass<Noby2Pass>()->setEnabled(true);
 	
 	post[0]->setReso(width, height);
-	//post[6]->setReso(width, height);
+	post[6]->setReso(width, height);
 
 	model.loadModel("test.obj");
 
@@ -204,6 +208,8 @@ void ofApp::setup() {
 
 	offset_p2 = sync_get_track(rocket, "offset_p2");
 	speed_p2 = sync_get_track(rocket, "speed_p2");
+
+	zoom_p2 = sync_get_track(rocket, "zoom_peura");
 
 	peilaus_plasma = sync_get_track(rocket, "peilaus_plasma");
 
@@ -270,6 +276,8 @@ void ofApp::update() {
 
 	_offset_p2 = float(sync_get_val(offset_p2, row));
 	_speed_p2 = float(sync_get_val(speed_p2, row));
+
+	_zoom_p2 = float(sync_get_val(zoom_p2, row));
 
 	_peilaus_plasma = float(sync_get_val(peilaus_plasma, row));
 
@@ -346,7 +354,7 @@ void ofApp::update() {
 
 	for (int i = 0; i < 2; i++) {
 		P2.beginS();
-		if (i == 1)P2.update(time, _offset_p2, _speed_p2);
+		if (i == 1)P2.update(time, _offset_p2, _speed_p2, _zoom_p2);
 		P2.endS();
 	}
 
@@ -411,7 +419,7 @@ void ofApp::renderTerm() {
 void ofApp::draw() {
 
 	// enable / disable post effects in post chain
-
+	
 	if (_post_bloom > 0.0) {
 		post[1]->setEnabled(true);
 	}
@@ -439,7 +447,7 @@ void ofApp::draw() {
 	else {
 		post[5]->setEnabled(false);
 	}
-
+	
 	// render scene
 
 	post.begin();

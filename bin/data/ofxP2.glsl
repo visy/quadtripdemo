@@ -1,4 +1,5 @@
 uniform float time;
+uniform float zoom;
 uniform vec2 resolution;
 uniform float offset;
 
@@ -45,7 +46,7 @@ void main() {
 	p.z = 16. + 1.5 + (time+offset)*0.5;
 
 	vec2 off = 4.5 / resolution.xy;
-	p *= 0.8;
+	p *= zoom;
 	vec2 value = vec2(0);
 	value += wolfFaceEQ(p + vec3(0.0, 1.0, 0.0), (time+offset));
 	value += wolfFaceEQ(p + vec3(off.x, 1.0, 0.0), (time+offset));
